@@ -24,6 +24,10 @@ public class MyService extends Service {
 
 
         IMyAidlInterface myAidlInterface ;
+        //获取本地Binder对象，然后进行返回----->通过Binder驱动，在内核空间中保存Binder本地对象的引用，然后注册到ServiceMananger中，
+        //          ServiceMananger中维护着这个Binder本地对象的引用，Client可以通过ServiceManager查找到这个引用，通过Binder驱动来调用到真实
+        //          Binder对象中的本地方法；
+        //
         return new MyAppImpl(this);
     }
 
